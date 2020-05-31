@@ -1,4 +1,5 @@
 {% extends 'sample_app/base.html' %} {% block title %}テストページ{% endblock title %} {% block content %}
+<!-- object.xxxxのobjectにはviewで持ってきたobject名を入れなくてはいけない -->
 <h1>{{ object.name }}</h1>
 <section class="post-text">
     {{ object.memo|linebreaksbr }}
@@ -6,8 +7,17 @@
 <section class="post-date">
     <p>Created: {{ object.created_at }}<span>/</span>Updated: {{ object.updated_at }}</p>
 </section>
+<<<<<<< HEAD
 <img src='{% url 'sample_app:plot' object.pk %}' width=600 height=600>
+=======
+<!-- エラーが出ている原因自体はここ urlディスパッチャの使い方は ’namespace名:name'となっている -->
+<!-- 詰まるところurls.pyと照らし合わせなければならない、今回の場合 'sample_app:index'などとなる -->
+<img src='{% url ' monitor:plot ' object.pk %}' width=600 height=600>
+>>>>>>> 3770f4785a2c451a44583875bbd26ca128cfcb2b
 <section>
-    <p><a href="javascript:history.back()">< Back</a></p>
+    <p>
+        <a href="javascript:history.back()">
+            < Back</a>
+    </p>
 </section>
 {% endblock content %}
