@@ -1,4 +1,3 @@
-"""This is a test program."""
 from django.urls import path
 from . import views
 
