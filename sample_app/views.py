@@ -7,19 +7,19 @@ import matplotlib.pyplot as pp
 
 
 
-# def index(request):
-#     context = {
-#         'name' : 'iima',
-#     }
-#     return render(request, 'sample_app/index.html', context)
+ def index(request):
+     context = {
+         'name' : 'iima',
+     }
+     return render(request, 'sample_app/index.html', context)
 
-# def about(request):
-#     """/about アバウトページ"""
-#     return render(request, 'sample_app/about.html')
+ def about(request):
+     """/about アバウトページ"""
+     return render(request, 'sample_app/about.html')
 
-# def info(request):
-#     """/info インフォページ"""
-#     return render(request, 'sample_app/info.html')
+ def info(request):
+     """/info インフォページ"""
+     return render(request, 'sample_app/info.html')
 
 class IndexView(LoginRequiredMixin, generic.ListView):
     model = Location
